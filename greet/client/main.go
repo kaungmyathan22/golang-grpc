@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"github.com/kaungmyathan22/golang-grpc/greet/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/insecure"
@@ -36,9 +37,9 @@ func main() {
 	}
 
 	defer conn.Close()
-	// c := proto.NewGreetServiceClient(conn)
+	c := proto.NewGreetServiceClient(conn)
 
-	// doGreet(c)
+	doGreet(c)
 	// doGreetManyTimes(c)
 	// doLongGreet(c)
 	// doGreetEveryone(c)
